@@ -1,0 +1,18 @@
+*** Building a walking skeleton ***
+
+Model klasörüne Modellerimizi ekliyoruz
+Data klasörüne DataContext ekledik
+csProj dosyasındaki TargetFramework ile uyumlu olan versiyonu Nugettan EntityFrameworkCore.Sqlite ekledik.  
+Startup.cs dosyasına  services.AddDbContext<DataContext>(x=>x.UseSqlite("connectionString")); ekledik
+appsettings.json dosyasına  "ConnectionStrings" ekledik, startup.cs de ConfigureServices'ten bu ConnectionStrings'i çağırdık
+
+
+--------------------------------------------------------------------------------------------------------------
+
+
+komutlar
+dotnet run
+dotnet ef -h
+dotnet ef migrations add InitialCreate 
+dotnet ef database update => db yoksa db oluşturur
+dotnet watch run
