@@ -6,6 +6,9 @@ csProj dosyasındaki TargetFramework ile uyumlu olan versiyonu Nugettan EntityFr
 Startup.cs dosyasına  services.AddDbContext<DataContext>(x=>x.UseSqlite("connectionString")); ekledik
 appsettings.json dosyasına  "ConnectionStrings" ekledik, startup.cs de ConfigureServices'ten bu ConnectionStrings'i çağırdık
 
+alertyfjs eklendi
+
+
 
 --------------------------------------------------------------------------------------------------------------
 
@@ -22,3 +25,7 @@ dotnet user-secrets set "AppSettings:Token" "super secret key"
 dotnet user-secrets list
 git rm appsettings.json --cached
 git push -u origin master
+
+--Token kontrolü için 
+https://github.com/auth0/angular2-jwt
+npm install @auth0/angular-jwt
