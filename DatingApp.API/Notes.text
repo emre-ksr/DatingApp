@@ -7,9 +7,12 @@ Startup.cs dosyasına  services.AddDbContext<DataContext>(x=>x.UseSqlite("connec
 appsettings.json dosyasına  "ConnectionStrings" ekledik, startup.cs de ConfigureServices'ten bu ConnectionStrings'i çağırdık
 
 alertyfjs eklendi
-
-
-
+Angular JWT kullanıldı
+NGX Bootstrap
+https://valor-software.com/ngx-bootstrap/old/3.0.1/#/
+Bootswatch - theme eklendi
+Routing eklendi
+AuthGuard eklendi
 --------------------------------------------------------------------------------------------------------------
 
 
@@ -25,6 +28,9 @@ dotnet user-secrets set "AppSettings:Token" "super secret key"
 dotnet user-secrets list
 git rm appsettings.json --cached
 git push -u origin master
+
+guard eklemek için:
+ng g guard auth --skipTests
 
 --Token kontrolü için 
 https://github.com/auth0/angular2-jwt
