@@ -41,10 +41,11 @@ namespace DatingApp.API
                     opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
             services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper(typeof(DatingRepository).Assembly);
             //_note inject edebilmek için buraya ekliyoruz
             services.AddScoped<IAuthRepository,AuthRepository>();
-            services.AddScoped<IDatingRepository,DatingRepository>();
+            services.AddScoped<IDatingRepository,DatingRepository>(); 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options=>{
                     options.TokenValidationParameters = new TokenValidationParameters
